@@ -32,7 +32,7 @@ init((isOpen, type, detail) => {
 ```
 
 ### HTML Example
-Check /dist/example.html
+Check `/dist/example.html`
 Live example: https://vehbiu.github.io/detect-devtools/dist/example.html
 
 

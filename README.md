@@ -1,6 +1,7 @@
 # 🔍 DETECT-DEVTOOLS
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Bun](https://img.shields.io/badge/bun-FFA500?style=for-the-badge&logo=bun&logoColor=white)
 
 A lightweight, modular library for detecting when browser developer tools are opened, using multiple detection strategies.
 

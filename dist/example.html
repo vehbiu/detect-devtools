@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools Detector Demo</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .status-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        #status {
+            font-size: 1.2rem;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .instructions {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #4b5563;
+        }
+
+        kbd {
+            background-color: #e5e7eb;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DevTools Detector</h1>
+        <div class="status-card">
+            <h2>Current Status</h2>
+            <p id="status">Checking...</p>
+        </div>
+        <div class="instructions">
+            <p>Press <kbd>F12</kbd> or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> to toggle DevTools</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { init } from './index.js';
+
+        const statusElement = document.getElementById('status');
+        const statusCard = document.querySelector('.status-card');
+
+        init((open, type, detail) => {
+            const statusText = `${open ? '🔓 OPEN' : '🔒 CLOSED'}`;
+            const detectionMethod = `Detection Method: ${type}`;
+            const detailText = detail ? `\nDetails: ${JSON.stringify(detail)}` : '';
+            
+            statusElement.innerHTML = `
+                <strong>${statusText}</strong><br>
+                <span style="font-size: 0.9rem; color: #4b5563;">${detectionMethod}${detailText}</span>
+            `;
+
+            // Change card color based on state
+            statusCard.style.backgroundColor = open ? '#fee2e2' : '#dcfce7';
+            statusCard.style.borderLeft = `4px solid ${open ? '#dc2626' : '#16a34a'}`;
+        });
+    </script>
+</body>
+</html>

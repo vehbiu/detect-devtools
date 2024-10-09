@@ -1,0 +1,19 @@
+{
+  "name": "detect-devtools",
+  "version": "1.0.6",
+  "author": "vehbiu",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@types/bun": "^1.1.10"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir dist/ --minify",
+    "dev": "bun build ./src/index.ts --outdir dist/ --watch"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

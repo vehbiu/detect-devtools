@@ -93,7 +93,8 @@ Vehbi
 ## 🙏 Acknowledgments
 
 - Inspired by various DevTools detection techniques
-- https://github.com/sindresorhus/devtools-detect/
+- Lots of techniques improved from:
+    - https://github.com/sindresorhus/devtools-detect/
 
 ---
 Made with ❤️ for the developer community

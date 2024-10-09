@@ -15,7 +15,7 @@ A lightweight, modular library for detecting when browser developer tools are op
 ## 🚀 Installation
 
 ```bash
-npm install detect-devtools
+npm install --save detect-devtools
 ```
 
 ## 📋 Usage
